@@ -1,0 +1,80 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+
+body {
+    font-family: 'Roboto';
+    margin: 50px;
+}
+
+/* header/h1 is the title.  but it is also a link.  is it better to
+ * define the style in this way or just to h1/a?
+ */
+header h1 {
+    margin-bottom: 0px;
+}
+header h1 a {
+    text-decoration: none;
+    color: #dd0000;
+    font-size: 26px;
+    font-weight: 100;
+}
+
+/* h2 in header is used for the page subtitle */
+header h2 {
+    color: #777777;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 0px;
+}
+
+/* style for the links in the header */
+header nav a {
+    color: #dddddd;
+    text-decoration: none;
+    margin-right: 10px;
+    padding-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+article {
+    margin-top: 60px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #aaaaaa;
+}
+
+/* h3 in article is used for the date line */
+article h3 {
+    font-size: 20px;
+    color: #aaaaaa;
+    margin-bottom: 0px;
+}
+
+/* h2 in article is used for article title */
+article h2{
+    margin-top: 0px;
+}
+article h2 a {
+    font-size: 20px;
+    color: #555555;
+    text-decoration: none;
+}
+
+/* article/h4 is the "continues..." link */
+article h4 {
+    text-align: right;
+}
+article h4 a {
+    text-decoration: none;
+    color: #dd0000;
+    font-size: 12px;
+}
+
+article p {
+    font-size: 12px;
+    color: #999999;
+}
+
+.lead-char {
+    font-size: 100px;
+}
