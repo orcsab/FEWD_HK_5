@@ -1,4 +1,4 @@
-ls![General Assembly](../assets/images/ga.png)
+![General Assembly](../assets/images/ga.png)
 # FEWD LESSON 4
 
 ## FEWD - Layout
@@ -144,7 +144,7 @@ That should be all! Check GH to check whether it worked
 <aside class="notes">Kit ~ 20 min</aside>
 
 Float is a CSS positioning property, used to layout a web page.
-![](http://css-tricks.com/wp-content/csstricks-uploads/web-layout.png)## Floats
+![](http://css-tricks.com/wp-content/csstricks-uploads/web-layout.png)
 
 
 
