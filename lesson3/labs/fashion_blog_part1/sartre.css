@@ -38,13 +38,18 @@ header h2 {
 }
 
 /* style for the links in the header */
+header nav {
+    width: auto;
+}
 header nav a {
     color: #dddddd;
     text-decoration: none;
-    margin-right: 10px;
-    padding-bottom: 3px;
+    padding: 3px;
+    margin: auto;
     border-bottom-style: solid;
     border-bottom-width: 2px;
+    display: inline-block;
+    width: 16%;
 }
 
 article {
@@ -56,6 +61,7 @@ article {
 
 article img {
     width: 100%;
+    margin-bottom: 0px;
 }
 
 /* h3 in article is used for the date line */
@@ -68,6 +74,7 @@ article h3 {
 /* h2 in article is used for article title */
 article h2{
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 article h2 a {
     font-size: 20px;
@@ -84,10 +91,15 @@ article h4 a {
 }
 
 article p {
+    margin-top: 10px;
     font-size: 12px;
     color: #999999;
+    line-height: 150%;
 }
 
-.lead-char {
-    font-size: 100px;
+/*  first psuedo-element experiement  */
+article p:first-letter {
+    font-size: 6em;
+    float: left;
+    line-height: 0.7;
 }
