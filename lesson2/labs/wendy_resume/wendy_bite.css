@@ -1,0 +1,93 @@
+body {
+  background-color: #444444;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #888888;
+  margin: 20px;
+  padding: 30px;
+}
+
+a {
+  color: green;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+  color: white;
+}
+
+h2 {
+  font-family: Arial;
+  color: white;
+}
+
+h3 {
+  font-family: Arial;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-size: 12px;
+}
+
+img {
+  float: right;
+}
+
+p {
+  color: #cccccc;
+}
+
+ul {
+  list-style-type: square;
+  color: #ffffff;
+}
+
+strong {
+  color: #eeeeee;
+}
+
+.nav p {
+  font-family: Arial;
+  text-align: center;
+}
+
+.job-title {
+  font-weight: bold;
+  font-family: Arial;
+  color: #eeeeee;
+  font-size: 12px;
+}
+
+.company {
+  font-family: Arial;
+  color: #dddddd;
+  font-size: 12px;
+}
+
+.date {
+  font-family: Arial;
+  color:#aaaaaa;
+  font-size: 12px;
+}
+
+.description {
+  color: #aaaaaa;
+  font-size: 13px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+li > p {
+  margin: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
