@@ -42,14 +42,12 @@ header nav {
     width: auto;
 }
 header nav a {
-    color: #dddddd;
+    color: #ffffff;
     text-decoration: none;
     padding: 3px;
-    margin: auto;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    display: inline-block;
-    width: 16%;
+    width: 100px;
 }
 
 article {
