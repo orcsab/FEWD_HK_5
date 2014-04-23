@@ -1,0 +1,103 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+
+body {
+    font-family: 'Roboto';
+    margin: 50px;
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    margin: 1em 0;
+}
+
+/* header/h1 is the title.  but it is also a link.  is it better to
+ * define the style in this way or just to h1/a?
+ */
+header h1 {
+    margin-bottom: 0px;
+}
+header h1 a {
+    color: #dd0000;
+    font-size: 26px;
+    font-weight: 100;
+}
+
+/* h2 in header is used for the page subtitle */
+header h2 {
+    color: #777777;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 0px;
+}
+
+/* style for the links in the header */
+header nav {
+    width: auto;
+}
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: 100px;
+}
+
+article {
+    margin-top: 60px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #aaaaaa;
+}
+
+article img {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+/* h3 in article is used for the date line */
+article h3 {
+    font-size: 20px;
+    color: #aaaaaa;
+    margin-bottom: 0px;
+}
+
+/* h2 in article is used for article title */
+article h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+article h2 a {
+    font-size: 20px;
+    color: #555555;
+}
+
+/* article/h4 is the "continues..." link */
+article h4 {
+    text-align: right;
+}
+article h4 a {
+    color: #dd0000;
+    font-size: 12px;
+}
+
+article p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999999;
+    line-height: 150%;
+}
+
+/*  first psuedo-element experiement  */
+article p:first-letter {
+    font-size: 6em;
+    float: left;
+    line-height: 0.7;
+}
