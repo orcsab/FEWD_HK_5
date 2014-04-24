@@ -1,0 +1,94 @@
+body {
+  width: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.header-1 {
+  background-color: black;
+  border-color: yellow;
+  border-width: 10px;
+}
+
+.header-1 h1 {
+  color: yellow;
+  padding-top: 10px;
+  padding-left: 30px;
+  margin-top: 0px;
+}
+
+.header-1 nav {
+  float: right;
+  height: 30px;
+  margin-after: 0px;
+}
+
+.header-2 h2 {
+  text-align: center;
+  background-color: #bbbbbb;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.marquee {
+  background-image: url(images/coworking.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.mar-create {
+  background-color: gray;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 30%;
+  opacity: 0.8;
+  border-color: black;
+  border-width: 1px;
+}
+
+.options {
+  background-color: #eeeeee;
+}
+
+.opt-create {
+  display: inline;
+  float: left;
+  width: 33%;
+}
+
+.opt-find-dev {
+  display: inline;
+  float: left;
+  width: 33%;
+}
+
+.opt-find-des {
+  display: inline;
+  float: left;
+  width: 33%;
+}
+
+.footer p {
+  color: white;
+  background-color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 40px;
+}
+
+/* obligatory clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
