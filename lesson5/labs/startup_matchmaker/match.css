@@ -5,9 +5,8 @@ body {
 }
 
 .header-1 {
+  border-bottom: solid yellow 2px;
   background-color: black;
-  border-color: yellow;
-  border-width: 10px;
 }
 
 .header-1 h1 {
@@ -40,15 +39,18 @@ body {
 }
 
 .mar-create {
-  background-color: gray;
+  background-color: #cccccc;
   float: right;
   margin-top: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  padding: 10px;
   width: 30%;
   opacity: 0.8;
-  border-color: black;
-  border-width: 1px;
+  border: solid #888888 1px;
+}
+
+.mar-create a {
+  background-color: yellow;
 }
 
 .options {
@@ -58,19 +60,24 @@ body {
 .opt-create {
   display: inline;
   float: left;
-  width: 33%;
+  width: 30%;
+  padding: 10px;
+  border-right: solid #cccccc 1px;
 }
 
 .opt-find-dev {
   display: inline;
   float: left;
-  width: 33%;
+  width: 30%;
+  padding: 10px;
+  border-right: solid #cccccc 1px;
 }
 
 .opt-find-des {
   display: inline;
   float: left;
-  width: 33%;
+  width: 30%;
+  padding: 10px;
 }
 
 .footer p {
@@ -91,4 +98,21 @@ body {
   visibility: hidden;
   line-height: 0;
   height: 0;
+}
+
+/* all caps */
+.allcaps {
+  text-transform: uppercase;
+}
+
+/* a class that kind of looks like a button */
+.button {
+  display: inline-block;
+  width: 238px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: gray;
+  border-radius: 5px;
+  border-bottom: outset gray 2px;
+  text-decoration: none;
 }
