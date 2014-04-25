@@ -2,6 +2,11 @@ body {
   width: 800px;
   padding: 0px;
   margin: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h3 {
+  font-family: 'Merriweather', serif;
 }
 
 .header-1 {
@@ -107,6 +112,7 @@ body {
 
 /* a class that kind of looks like a button */
 .button {
+  font-family: 'Oswald', sans-serif;
   display: inline-block;
   width: 238px;
   text-transform: uppercase;
