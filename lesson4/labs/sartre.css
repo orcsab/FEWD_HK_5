@@ -3,7 +3,7 @@
 body {
     font-family: 'Roboto';
     margin: 50px;
-    width: 600px;
+    width: 800px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -17,15 +17,45 @@ a {
     margin: 1em 0;
 }
 
+/* Define the layout of the articles and the sidebar.
+ */
+.hdr {
+
+}
+
+.articles {
+    float: left;
+    width: 70%;
+    display: inline-block;
+}
+
+.sidebar {
+    width: 30%;
+    float: left;
+    display: inline-block;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+
+
 /* header/h1 is the title.  but it is also a link.  is it better to
  * define the style in this way or just to h1/a?
  */
 header h1 {
     margin-bottom: 0px;
+    display: inline-block;
 }
 header h1 a {
     color: #dd0000;
-    font-size: 26px;
+    font-size: 40px;
     font-weight: 100;
 }
 
@@ -35,6 +65,7 @@ header h2 {
     font-size: 20px;
     font-weight: 100;
     margin-top: 0px;
+    display: inline-block;
 }
 
 /* style for the links in the header */
@@ -43,6 +74,7 @@ header nav {
 }
 header nav a {
     color: #ffffff;
+    background-color: #000000;
     text-decoration: none;
     padding: 3px;
     border-bottom-style: solid;
@@ -79,11 +111,13 @@ article h2 a {
     color: #555555;
 }
 
-/* article/h4 is the "continues..." link */
-article h4 {
+/* article/h4 is the "continues..." link used both in the article and the
+ * side panel
+ */
+h4 {
     text-align: right;
 }
-article h4 a {
+h4 a {
     color: #dd0000;
     font-size: 12px;
 }
@@ -100,4 +134,22 @@ article p:first-letter {
     font-size: 6em;
     float: left;
     line-height: 0.7;
+}
+
+/* for the "about us" section in the sidebar */
+div.sidebar h3 {
+    font-size: 12px;
+    color: #888888;
+}
+div.about p {
+    font-size: 10px;
+    color: #888888;
+}
+
+.advert {
+
+}
+
+div.popular ul {
+    font-size: 10px;
 }
