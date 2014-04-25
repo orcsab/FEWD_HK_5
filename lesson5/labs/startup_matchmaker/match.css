@@ -1,0 +1,118 @@
+body {
+  width: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.header-1 {
+  border-bottom: solid yellow 2px;
+  background-color: black;
+}
+
+.header-1 h1 {
+  color: yellow;
+  padding-top: 10px;
+  padding-left: 30px;
+  margin-top: 0px;
+}
+
+.header-1 nav {
+  float: right;
+  height: 30px;
+  margin-after: 0px;
+}
+
+.header-2 h2 {
+  text-align: center;
+  background-color: #bbbbbb;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.marquee {
+  background-image: url(images/coworking.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.mar-create {
+  background-color: #cccccc;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  width: 30%;
+  opacity: 0.8;
+  border: solid #888888 1px;
+}
+
+.mar-create a {
+  background-color: yellow;
+}
+
+.options {
+  background-color: #eeeeee;
+}
+
+.opt-create {
+  display: inline;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  border-right: solid #cccccc 1px;
+}
+
+.opt-find-dev {
+  display: inline;
+  float: left;
+  width: 30%;
+  padding: 10px;
+  border-right: solid #cccccc 1px;
+}
+
+.opt-find-des {
+  display: inline;
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.footer p {
+  color: white;
+  background-color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 40px;
+}
+
+/* obligatory clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* all caps */
+.allcaps {
+  text-transform: uppercase;
+}
+
+/* a class that kind of looks like a button */
+.button {
+  display: inline-block;
+  width: 238px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: gray;
+  border-radius: 5px;
+  border-bottom: outset gray 2px;
+  text-decoration: none;
+}
