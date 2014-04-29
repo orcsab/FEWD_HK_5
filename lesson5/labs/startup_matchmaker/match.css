@@ -27,6 +27,16 @@ h3 {
   margin-after: 0px;
 }
 
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:active {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
 .header-2 h2 {
   text-align: center;
   background-color: #bbbbbb;
@@ -34,6 +44,15 @@ h3 {
   padding-bottom: 20px;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.header-2 strike {
+  color: gray;
+}
+
+.header-2 u {
+  text-decoration: none;
+  border-bottom: solid yellow 2px;
 }
 
 .marquee {
@@ -44,7 +63,7 @@ h3 {
 }
 
 .mar-create {
-  background-color: #cccccc;
+  background-color: #eeeeee;
   float: right;
   margin-top: 20px;
   margin-right: 20px;
@@ -117,8 +136,11 @@ h3 {
   width: 238px;
   text-transform: uppercase;
   text-align: center;
+  padding-top: 15px;
   background-color: gray;
   border-radius: 5px;
   border-bottom: outset gray 2px;
   text-decoration: none;
+  color: black;
+  height: 40px;
 }
