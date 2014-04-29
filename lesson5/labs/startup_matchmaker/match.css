@@ -149,5 +149,6 @@ nav a:active {
   border-bottom: outset gray 2px;
   text-decoration: none;
   color: black;
+  background-color: #bbbbbb;
   height: 40px;
 }
