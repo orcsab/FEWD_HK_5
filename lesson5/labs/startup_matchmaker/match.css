@@ -71,6 +71,11 @@ nav a:active {
   width: 30%;
   opacity: 0.8;
   border: solid #888888 1px;
+  font-size: 18px
+}
+
+.mar-create p {
+  line-height: 150%;
 }
 
 .mar-create a {
@@ -79,6 +84,8 @@ nav a:active {
 
 .options {
   background-color: #eeeeee;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .opt-create {
