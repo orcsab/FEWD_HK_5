@@ -5,11 +5,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-h3 {
-  font-family: 'Merriweather', serif;
-}
-
 .header-1 {
+  font-family: 'Merriweather', serif;
   border-bottom: solid yellow 2px;
   background-color: black;
 }
@@ -39,6 +36,7 @@ nav a:active {
 }
 
 .header-2 h2 {
+  font-family: 'Merriweather', serif;
   text-align: center;
   background-color: #bbbbbb;
   padding-top: 20px;
@@ -87,6 +85,10 @@ nav a:active {
   background-color: #eeeeee;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.options h3 {
+  font-family: 'Merriweather', serif;
 }
 
 .opt-create,
