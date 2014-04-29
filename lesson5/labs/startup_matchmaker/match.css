@@ -6,12 +6,12 @@ body {
 }
 
 .header-1 {
-  font-family: 'Merriweather', serif;
   border-bottom: solid yellow 2px;
   background-color: black;
 }
 
 .header-1 h1 {
+  font-family: 'Merriweather', serif;
   color: yellow;
   padding-top: 10px;
   padding-left: 30px;
