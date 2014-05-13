@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript in head or body?</title>
+  <!-- Include the jQuery lib from Google CDN -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <!-- 
+    The browser will load everything in <head> first and then <body>
+   -->
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      alert("** head inside document ready **");
+      alert(document.getElementById("text").innerHTML); // This will be shown becoz it the document ready will wait for the body completely loaded
+    });
+
+    alert("** head without document ready **");
+    alert(document.getElementById("text").innerHTML); // You won't see this alert box becoz the intepreter knows nothing about the body
+  </script>
+
+</head>
+<body>
+  <script type="text/javascript">
+    alert("** body before #text **");
+    alert(document.getElementById("text").innerHTML); // You won't see this alert box becoz the intepreter has not read the #text line yet
+  </script>
+  <h1 id="text">Hello World</h1>
+  <script type="text/javascript">
+    alert("** body after #text **");
+    alert(document.getElementById("text").innerHTML); // This will be shown as it is after the #text
+  </script>
+</body>
+</html>
