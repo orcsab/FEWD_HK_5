@@ -13,8 +13,8 @@ Kit Yuen & Mart van de Ven
 
 * Collection Of Data
 * Manipulating Collections
+* Work with bugs
 * Carousel
-* Final Project Wireframe
 
 
 
@@ -237,6 +237,15 @@ images.forEach(function(element, index){
   $('#gallery').append('<img src="' + element + '">');
 });
 ```
+
+
+
+## Work with bugs
+<aside class="notes">kit ~ 10 min</aside>
+
+When something doesn't look like expected. What should i do?
+
+_Ans: Chrome Inspector!_
 
 
 
