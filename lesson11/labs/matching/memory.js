@@ -12,10 +12,7 @@ $(function () {
   resetCards();
 });
 
-//  stupid goddamn globals that I need to get rid of
-var CHEAT = false;
-var unmatched = 0;
-var $lastcard = '';
+var STATE = State;
 
 // name: resetGame (callback)
 // args: event object
@@ -26,7 +23,7 @@ function resetGame (event) {
 // name: toggleCheat (callback)
 // args: event object
 function toggleCheat (event) {
-  CHEAT = !CHEAT;
+  STATE.toggleCheat();
 }
 
 // name: showCard (callback)
@@ -42,20 +39,27 @@ function showCard (event) {
     return;
   }
 
-  //  game is hard-coded to assume four cards.  if two cards are up then
-  //  first turn over all the cards before showing the newly clicked card.
-  //  Note that turnDownCards() has logic that will NOT turn down cards
+  //  game is hard-coded to assume four cards.  if two mismatched cards are
+  //  up then first turn over all the cards before showing the newly clicked
+  //  card.  Note that turnDownCards() has logic that will NOT turn down cards
   //  that were properly guessed.
-  if (unmatched === 2)
+  if (STATE.unmatched === 2)
     turnDownCards();
 
   // display this card.
   var card = $el.data('card');
   $el.attr('src', card);
   $el.data('state', 'unmatched');
-  unmatched++;
+  STATE.unmatched++;
+  STATE.moves++;
 
   setMatchedCards();
+
+  if (STATE.matched == 4) {
+    var msg = 'Congratulations! You\'v matched all cards in ' + STATE.moves + ' moves.';
+    $('#status').html(msg);
+    alert(msg);
+  }
 }
 
 // name: manageHint (callback)
@@ -79,6 +83,7 @@ function resetCards () {
   });
 
   turnDownCards(true);
+  STATE.reset();
 }
 
 // name: randomCards
@@ -101,7 +106,9 @@ function randomCards (count) {
       kcount--;
     }
     else {
-      if (Math.floor(Math.random() + 1)) {
+      var rand = Math.random();
+      console.log('rand = ' + rand);
+      if (Math.floor(rand + 0.5)) {
         cards.push('images/King.png');
         kcount--;
       }
@@ -139,7 +146,7 @@ function turnDownCards (reset) {
     }
   });
 
-  unmatched = 0;
+  STATE.unmatched = 0;
 }
 
 // name: setMatchedCards
@@ -151,22 +158,22 @@ function setMatchedCards () {
   console.log('in setMatchedCards');
 
   $('#card-container').children().each (function (index) {
-    console.log($(this));
-    console.log($(this).data('state'));
-    console.log($(this).data('card'));
-    console.log($last);
-    if (typeof $last === undefined && $(this).data('state') === 'unmatched') {
-      console.log('storing last unmatched card');
+    //  if the current card is an unmatched card and there is no previously
+    //  unmatched card then store this card as
+    if ($(this).data('state') === 'unmatched' && !$last) {
       $last = $(this);
     }
     else if ($last &&
-             $(this).data('state') === 'umatched' &&
+             $(this).data('state') === 'unmatched' &&
              $last.data('card') === $(this).data('card')) {
-      console.log('found two matched cards');
+      console.log('**** found two matched cards');
       $last.data('state', 'matched');
       $(this).data('state', 'matched');
-      unmatched = 0;
+      STATE.unmatched = 0;
+      STATE.matched += 2;
       return;
     }
+    else
+      console.log('**** no previously unmatched card or no match');
   });
 }
