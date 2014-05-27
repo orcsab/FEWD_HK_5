@@ -48,7 +48,12 @@ function showCard (event) {
 
   // display this card.
   var card = $el.data('card');
-  $el.attr('src', card);
+  console.log('displaying card');
+  console.log(card);
+  $el.attr('width', card.width);
+  $el.attr('height', card.height);
+  $el.css('background-image', 'url(images/classic-playing-cards.png)');
+  $el.css('background-position', card.x + ' ' + card.y);
   $el.data('state', 'unmatched');
   STATE.unmatched++;
   STATE.moves++;
@@ -56,7 +61,7 @@ function showCard (event) {
   setMatchedCards();
 
   if (STATE.matched == 4) {
-    var msg = 'Congratulations! You\'v matched all cards in ' + STATE.moves + ' moves.';
+    var msg = 'Congratulations! You\'ve matched all cards in ' + STATE.moves + ' moves.';
     $('#status').html(msg);
     alert(msg);
   }
@@ -76,7 +81,7 @@ function resetCards () {
   console.log('resetCards');
   console.log(cards);
   // create random
-  var cardSelection = randomCards(4);
+  var cardSelection = randomCards();
   $('#card-container').children().each (function (i) {
     console.log($(this));
     $(this).data('card', cardSelection[i]);
@@ -87,38 +92,66 @@ function resetCards () {
 }
 
 // name: randomCards
-// args: the number of random cards to generate
 // rval: an array of size 'count' of cards (file names)
-function randomCards (count) {
-  var kcount = 2, qcount = 2;
+function randomCards () {
+  var count0 = 2, count1 = 2; // the number of times each card will be displayed
   var cards = [];
 
-  if (kcount + qcount != count)
+  if (count0 + count1 != 4)
     throw 'card count incorrectly assumed to be four';
 
-  for (var i = 0; i < count; i++) {
-    if (kcount === 0) {
-      cards.push('images/Queen.png');
-      qcount--;
+  //  pick two random cards from the sprite.
+  var selectedCards = pickCards(2);
+
+  //  now randomize their order.
+  for (var i = 0; i < 4; i++) {
+    if (count0 === 0) {
+      cards.push(selectedCards[1]);
+      count1--;
     }
-    else if (qcount === 0) {
-      cards.push('images/King.png');
-      kcount--;
+    else if (count1 === 0) {
+      cards.push(selectedCards[0]);
+      count0--;
     }
     else {
       var rand = Math.random();
       console.log('rand = ' + rand);
       if (Math.floor(rand + 0.5)) {
-        cards.push('images/King.png');
-        kcount--;
+        cards.push(selectedCards[1]);
+        count1--;
       }
       else {
-        cards.push('images/Queen.png');
-        qcount--;
+        cards.push(selectedCards[0]);
+        count0--;
       }
     }
   }
 
+  return cards;
+}
+
+// name: pickCards
+// args: count: the number of cards to pick from the deck
+// rval: a count-length array of coordinates in the sprite that maps to a card.
+function pickCards (count) {
+  var cards = [];
+  while (count > 0) {
+    //  card and suit match to x and y coordinates in the sprite and then
+    //  translate them (negate them) for use in relative postioning in HTML.
+    var card = Math.floor(Math.random() * 13);
+    var suit = Math.floor(Math.random() * 4);
+    var width = 73;
+    var height = 98;
+    var x = card * width * -1 + 'px';
+    var y = card * height * -1 + 'px';
+
+    // in the unlikely event that we picked the same card re-loop.
+    if (count == 1 && cards[0].x == x && cards[0].y == y)
+      continue;
+
+    cards.push({x: x, y: y, width: width, height: height});
+    count--;
+  }
   return cards;
 }
 
@@ -130,18 +163,14 @@ function turnDownCards (reset) {
   $('#card-container').children().each(function (index) {
     console.log($(this).data('state'));
 
-    //  of course the two statements below can be collapsed into a single
-    //  if statement.
-    //
-    //  if we are doing a reset, clear everything
-    if (reset) {
-      $(this).attr('src', 'images/back-of-card.png');
-      $(this).data('state', 'down');
-    }
-    //  if we are not doing a reset (maybe just clearing cards because
-    //  previous guesses were wrong) then only turn over unmatched cards
-    else if (!reset && $(this).data('state') != 'matched') {
-      $(this).attr('src', 'images/back-of-card.png');
+    //  Two conditions to turn down cards:
+    //  1.  if we are doing a reset, clear everything
+    //  2.  if we are not doing a reset (maybe just clearing cards because
+    //      previous guesses were wrong) then only turn over unmatched cards
+    if (reset ||
+        (!reset && $(this).data('state') != 'matched')) {
+      $(this).css('background-image', 'url(images/back-of-card.png)');
+      $(this).css('background-position', '0 0');
       $(this).data('state', 'down');
     }
   });
