@@ -25,4 +25,11 @@ $(function() {
     });
     $input.show();
   });
+
+  $('#tasklist').on('click', 'li .text', function() {
+    var desc = $(this).text();
+    console.log('desc = ' + desc);
+    TASKLIST.toggleComplete(desc);
+  });
+
 });

@@ -11,8 +11,7 @@ var TASKLIST = {
     html += '</li>';
     html += '</div>';
     $('#tasklist').append(html);
-    this.incomplete++;
-    $('#taskcount').text(this.incomplete);
+    this.updateIncomplete(1);
   },
 
   removeTask: function(desc) {
@@ -20,7 +19,7 @@ var TASKLIST = {
       var $child = $(value);
       if ($child.text() === desc) {
         $child.parent().remove();
-        incomplete--;
+        TASKLIST.updateIncomplete(-1);
         return;
       }
     });
@@ -37,8 +36,30 @@ var TASKLIST = {
     });
   },
 
-  markComplete: function(index) {
+  updateIncomplete: function (change) {
+    this.incomplete += change;
+    $('#taskcount').text(this.incomplete);
+  },
 
+  toggleComplete: function(desc) {
+    console.log('marking complete: ' + desc);
+
+    $.each ($('#tasklist').find('.text'), function (index, value) {
+      var $child = $(value);
+      if ($child.text() === desc) {
+        var strike = $child.css('text-decoration').split(' ')[0];
+        console.log('current text decoration: ' + strike);
+        if (strike === 'line-through') {
+          $child.css('text-decoration', 'none');
+          TASKLIST.updateIncomplete(1);
+        }
+        else {
+          $child.css('text-decoration', 'line-through');
+          TASKLIST.updateIncomplete(-1);
+        }
+        return;
+      }
+    });
   },
 
   markIncomplete: function(index) {
