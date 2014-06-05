@@ -63,7 +63,7 @@ function showCard (event) {
   if (STATE.matched == 4) {
     var msg = 'Congratulations! You\'ve matched all cards in ' + STATE.moves + ' moves.';
     $('#status').html(msg);
-    alert(msg);
+    // alert(msg);
   }
 }
 
