@@ -1,0 +1,13 @@
+.card {
+  background-image: url(../images/back-of-card.png);
+  width: 71px;
+  height: 96px;
+}
+
+.king.flipped {
+  background-image: url(../images/King.png);
+}
+
+.queen.flipped {
+  background-image: url(../images/Queen.png);
+}
