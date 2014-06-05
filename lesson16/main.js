@@ -10,4 +10,19 @@ $(function() {
     console.log('desc = ' + desc);
     TASKLIST.removeTask(desc);
   });
+
+  $('#tasklist').on('click', 'li .edit', function() {
+    console.log('captured edit click');
+    $input = $(this).parent().children('input');
+    $input.keypress (function (e) {
+      if (e.which == 13) {
+        console.log(e);
+        var olddesc = $(e.target).parent().children('.text').text();
+        var newdesc = e.target.value;
+        TASKLIST.updateTask(olddesc, newdesc);
+        $(e.target).hide();
+      }
+    });
+    $input.show();
+  });
 });

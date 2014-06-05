@@ -1,3 +1,14 @@
 li a {
   padding-left: 5px;
 }
+
+.task {
+  position: relative;
+}
+
+li input {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+}
