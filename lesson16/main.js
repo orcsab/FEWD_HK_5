@@ -32,4 +32,11 @@ $(function() {
     TASKLIST.toggleComplete(desc);
   });
 
+  $('#clear-all').click(function () {
+    TASKLIST.clear(true);
+  });
+
+  $('#clear-complete').click(function () {
+    TASKLIST.clear(false);
+  });
 });

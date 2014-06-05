@@ -62,7 +62,21 @@ var TASKLIST = {
     });
   },
 
-  markIncomplete: function(index) {
-
+  //  the parameter is a boolean stating that all tasks should be
+  //  cleared (as opposed to false, which denotes clearing only
+  //  completed tasks)
+  clear: function (all) {
+    console.log('clearing');
+    $.each ($('#tasklist').find('.text'), function (index, value) {
+      var $child = $(value);
+      var strike = $child.css('text-decoration').split(' ')[0];
+      if (strike === 'line-through') {
+        $child.parent().remove();
+      }
+      else if (all) {
+        $child.parent().remove();
+        TASKLIST.updateIncomplete(-1);
+      }
+    });
   }
 };
