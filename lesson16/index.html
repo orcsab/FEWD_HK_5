@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Task List</title>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="tasklist.css">
+    <script type="text/javascript" src="tasklist.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body>
+    <form id="newtask">
+        <input type="text" name="task" id="taskdesc">
+        <input type="submit" id="submit">
+    </form>
+    <h2>Current tasks:</h2>
+    <ul id="tasklist">
+    </ul>
+    <p>There are <span id="taskcount">0</span> tasks pending.</p>
+  </body>
+</html>
