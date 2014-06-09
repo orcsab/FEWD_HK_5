@@ -14,24 +14,22 @@
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <p>There are <span id="taskcount">0</span> tasks pending.</p>
-          <button type="button" id="clear-all">Clear all items</button>
-          <button type="button" id="clear-complete">Clear completed items</button>
-        </div>
-        <div class="col-md-8">
-          <h2>Current tasks:</h2>
-          <ul id="tasklist">
-          </ul>
-          <p> Create new: </p>
-          <form id="newtask">
+    <div class="wrapper">
+      <div class="sidebar-wrapper">
+        <p>There are <span class="badge" id="taskcount">0</span> tasks pending.</p>
+        <button class="btn btn-default" type="button" id="clear-all">Clear all items</button>
+        <button class="btn btn-default" type="button" id="clear-complete">Clear completed items</button>
+      </div> <!-- sidebar-wrapper -->
+      <div class="content-wrapper">
+        <h2>Current tasks:</h2>
+        <ul id="tasklist">
+        </ul>
+        <p> Create new: </p>
+        <form id="newtask">
           <input type="text" name="task" id="taskdesc">
           <input type="submit" id="submit">
         </form>
-        </div>
-      </div> <!-- row -->
-    </div> <!-- container -->
+      </div> <!-- content-wrapper -->
+    </div> <!-- wrapper -->
   </body>
 </html>
