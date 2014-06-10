@@ -5,13 +5,13 @@ $(function() {
     TASKLIST.addTask($('#taskdesc').val());
   });
 
-  $('#tasklist').on('click', 'li .remove', function() {
+  $('#tasklist').on('click', 'td .remove', function() {
     var desc = $(this).parent().children('.text').text();
     console.log('desc = ' + desc);
     TASKLIST.removeTask(desc);
   });
 
-  $('#tasklist').on('click', 'li .edit', function() {
+  $('#tasklist').on('click', 'td .edit', function() {
     console.log('captured edit click');
     $input = $(this).parent().children('input');
     $input.keypress (function (e) {
@@ -26,7 +26,7 @@ $(function() {
     $input.show();
   });
 
-  $('#tasklist').on('click', 'li .text', function() {
+  $('#tasklist').on('click', 'td .text', function() {
     var desc = $(this).text();
     console.log('desc = ' + desc);
     TASKLIST.toggleComplete(desc);

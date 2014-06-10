@@ -3,13 +3,13 @@ var TASKLIST = {
 
   addTask: function (desc) {
     var html = '';
-    html += '<div class="task">';
-    html += '<li> <span class="text">' + desc + '</span>';
+    html += '<tr class="task">';
+    html += '<td> <span class="text">' + desc + '</span>';
     html += '<a href="#" class="edit">edit</a>';
     html += '<a href="#" class="remove">remove</a>';
     html += '<input type="text" name="editbox">';
-    html += '</li>';
-    html += '</div>';
+    html += '</td>';
+    html += '</tr>';
     $('#tasklist').append(html);
     this.updateIncomplete(1);
   },
